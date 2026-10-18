@@ -1,0 +1,12 @@
+numpy
+gymnasium
+pettingzoo
+supersuit
+pygame-ce
+pyyaml
+matplotlib
+pandas
+tensorboard
+pytest
+imageio
+ray[rllib]

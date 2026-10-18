@@ -1,0 +1,38 @@
+# Dos MAPPO distintos (azul y rojo) que aprenden uno contra el otro, 2v2 en 10x10
+# con cajas y murallas simétricas (mapa nuevo en cada ronda).
+run_name: sp2_2v2_walls
+seed: 0
+iterations: 600
+save_every: 25
+n_envs: 16
+T: 128
+gamma: 0.99
+lam: 0.95
+lr: 0.0005
+ppo_epochs: 5
+minibatches: 4
+clip: 0.2
+vf_coef: 1.0
+ent_coef: 0.01
+max_grad_norm: 10.0
+hidden: 128
+beta0: 0.5
+anneal_epochs: 350
+decay: training
+opponent: selfplay
+p_past: 0.3          # prob. de que un aprendiz enfrente una versión pasada del otro equipo
+snapshot_every: 10
+pool_size: 20
+pfsp_power: 2.0
+env:
+  size: 10
+  n_per_team: 2
+  view_radius: 3
+  max_steps: 150
+  n_boxes: 2         # por mitad (se reflejan en la otra)
+  n_walls: 2
+  fixed_map: false
+  r_win: 1.0
+  w_def: 1.0
+  w_atk: 1.0
+  drop_cooldown: 2

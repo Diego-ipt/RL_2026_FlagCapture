@@ -1,0 +1,31 @@
+run_name: v2_1v1
+seed: 0
+iterations: 300
+save_every: 25
+n_envs: 16
+T: 128
+gamma: 0.99
+lam: 0.95
+lr: 0.0005
+ppo_epochs: 5
+minibatches: 4
+clip: 0.2
+vf_coef: 1.0
+ent_coef: 0.01
+max_grad_norm: 10.0
+hidden: 128
+# marcador de posicion de banderas: beta0 * (S_azul - S_rojo), decae a 0 en anneal_epochs
+beta0: 0.5
+anneal_epochs: 200
+decay: training   # training | episode | none
+env:
+  size: 8
+  n_per_team: 1
+  view_radius: 3
+  max_steps: 100
+  n_boxes: 0
+  n_walls: 0
+  r_win: 1.0
+  w_def: 1.0
+  w_atk: 1.0
+  drop_cooldown: 2

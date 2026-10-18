@@ -1,0 +1,9 @@
+services:
+  ctf:
+    build: .
+    image: rl-ctf:latest
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    tty: true
+    stdin_open: true
